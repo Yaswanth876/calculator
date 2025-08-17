@@ -1,0 +1,172 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;           /* Full screen height */
+    background-color: #f4f4f4;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.calculator {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 15px rgba(0,0,0,0.3);
+    width: 260px;
+}
+
+#display {
+    width: 90%;
+    height: 50px;
+    margin-bottom: 15px;
+    text-align: right;
+    font-size: 1.5rem;
+    padding: 10px;
+    border: 2px solid #555;
+    border-radius: 10px;
+    background-color: #333;
+    color: white;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 buttons per row */
+    gap: 10px;
+}
+
+button {
+    padding: 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #444;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #666;
+}
+
+button:active {
+    background-color: #888;
+}
+
+button:nth-child(1) { /* Clear button */
+    background-color: #e74c3c;
+}
+
+button:nth-child(1):hover {
+    background-color: #c0392b;
+}
+
+button:nth-child(4n) { /* Operators: /, *, -, + */
+    background-color: #f39c12;
+}
+
+button:nth-child(4n):hover {
+    background-color: #d35400;
+}
+
+button:nth-child(2) { /* Operators: /, *, -, + */
+    background-color: #f39c12;
+}
+
+button:nth-child(2):hover {
+    background-color: #d35400;
+}
+
+button:nth-child(3) { /* Operators: /, *, -, + */
+    background-color: #f39c12;
+}
+
+button:nth-child(3):hover {
+    background-color: #d35400;
+}
+
+button:nth-child(20) { /* = button */
+    background-color: #27ae60;
+}
+
+button:nth-child(20):hover {
+    background-color: #1e8449;
+}
+
+button {
+    transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+button:active {
+    transform: scale(0.95); /* shrink effect */
+}
+
+body.light {
+    background-color: #f4f4f4;
+    color: black;
+}
+
+body.dark {
+    background-color: #121212;
+    color: white;
+}
+
+body.dark .calculator {
+    background-color: #333;
+}
+
+body.light .calculator {
+    background-color: #fff;
+}
+
+/* Switch container */
+.switch {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+}
+
+/* Hide default checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider look */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+/* Checked (ON) state */
+input:checked + .slider {
+  background-color: #4caf50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(22px);
+}
